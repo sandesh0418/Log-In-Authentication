@@ -9,15 +9,16 @@ connection.connect(function(err){
 if(!err) {
     console.log("Database is connected");
 	connection.query("CREATE DATABASE IF NOT EXISTS `nodejs_login1`",function(err,results){
-		
-		console.log("Database created");
-	})
-	
-	
-	connection.query("CREATE TABLE IF NOT EXISTS `users`",function(err,results){
+		connection.query("USE nodejs_login1");
+		 var sql="CREATE TABLE IF NOT EXISTS `users`(`CWID` int(8) PRIMARY KEY, `firstName` varchar(20), `lastName` varchar(20), `email` varchar(20), `password` varchar(20), `role` varchar(20))";
+	connection.query(sql,function(err,results){
 		console.log("Table created");
 		
 	});
+		console.log("Database created");
+	});
+	
+	
 } else {
     console.log("Error while connecting with database");
 }
