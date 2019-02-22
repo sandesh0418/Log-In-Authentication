@@ -3,9 +3,7 @@ cryptr = new Cryptr('myTotalySecretKey');
  
 var connection = require('./../config');
 
-if(connection.getElementById="register".onclick =function(){
-	window.location.href = "../register.html";
-});
+
 module.exports.authenticate=function(req,res){
     var email=req.body.email;
     var password=req.body.password;
